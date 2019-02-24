@@ -1,0 +1,95 @@
+{
+	"variables": [],
+	"info": {
+		"name": "oauth2",
+		"_postman_id": "c3594bed-ae25-d064-0aab-c43d1f80f9db",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8082/oauth/token?password=12345&username=anderson&grant_type=password&scope=read write&client_id=fooClientIdPassword",
+			"request": {
+				"url": {
+					"raw": "http://localhost:8082/oauth/token?password=123456&username=anderson&grant_type=password&scope=read write&client_id=fooClientIdPassword",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"oauth",
+						"token"
+					],
+					"query": [
+						{
+							"key": "password",
+							"value": "123456",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "username",
+							"value": "anderson",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "scope",
+							"value": "read write",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_id",
+							"value": "fooClientIdPassword",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic Zm9vQ2xpZW50SWRQYXNzd29yZDpzZWNyZXQ=",
+						"description": ""
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8083/api/v1/test/list ",
+			"request": {
+				"url": "http://localhost:8083/api/v1/test/list ",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{accessToken}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
